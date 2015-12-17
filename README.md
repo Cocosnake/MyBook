@@ -1,3 +1,3 @@
-## Welcome to MyBook 2 ##
+## Welcome to MyBook ##
 
-* [Web Service](WebService.md)
+About Web Service
