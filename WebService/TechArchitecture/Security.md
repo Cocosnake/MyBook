@@ -44,5 +44,69 @@
 
 
 **主要防御手段**
-> 主要的防御方式是**识别请求者的身份**
-*
+> 主要的防御方式是**识别请求者的身份** 
+
+* 表单Token
+	> CSRF需要伪造用户请求的所有参数，所以在表单中加入随机数Token
+* 验证码
+	> 避免攻击 体验不好 谨慎使用
+* Referer Check
+	> 检测HTTP请求头的Referer域
+
+### 1.4 其他攻击和漏洞
+* Error Code
+	> 可将HTTP 500跳转到指定错误页面
+* HTML 注释
+* 文件上传
+	>限制文件类型
+* 路径遍历
+	> 将JS CSS等部署在独立服务器，使用独立域名，动态参数不包含路径信息
+ 
+### 1.5 Web应用防火墙
+ 开源ModeSecurity
+
+### 网站安全漏洞扫描
+
+## 2. 信息加密技术及密钥安全管理
+> 信息加密技术分类：**单项散列加密，对称加密 非对称加密**
+
+### 2.1 单项散列加密
+>对不同长度的输入信息进行散列加密 得到相同长度的输出
+
+>常用MD5 SHA等方法
+
+### 2.2 对称加密
+
+<img src="resource/Security-8_SymmetricCryptography.png" alt="对称加密" style="width:550"/>
+> 优点：效率高，系统开销小，使用大量数据加密
+
+> 缺点：同一密钥加密解密，远程传输密钥是关键
+
+> 常用算法： DES 、 RC 
+
+### 2.3 非对称加密
+<img src="resource/Security-AsymmetricCryptography.png" alt="非对称加密" style="width:650"/>
+> RAS 算法
+
+### 2.4 密钥安全管理
+	>密钥和算法放在独立服务器上，甚至独立硬件上---成本较高 消耗大 远程调用可能成为瓶颈
+	
+	>密钥分片存储在不同设备中，算法部署在应用服务器上
+<img src="resource/Security-10_KeySecurityMgt.png" alt="密钥安全管理" style="width:550"/>
+
+## 3.信息过滤与反垃圾
+
+### 3.1文本匹配
+> Trie树 、 Hash
+### 3.2 分类算法
+> Bayes / Native Bayes
+### 3.3 <span id="23" href="123">黑名单
+
+## 4.电子商务风险控制
+
+### 4.1风控
+机器自动风控的方式： 规则引擎和统计模型
+<img src="resource/Security-14.png" alt="基于规则引擎的风险控制系统" style="width:550"/>
+<img src="resource/Security-15.png" alt="基于统计模型的风险控制系统" style="width:550"/>
+
+
